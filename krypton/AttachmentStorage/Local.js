@@ -25,6 +25,7 @@ Class(Krypton.AttachmentStorage, 'Local')
           magic(stream[version], (err, _mime, output) => {
             if (err) {
               reject(err);
+              return;
             }
 
             const ext = mime.extension(_mime.type);
@@ -49,6 +50,7 @@ Class(Krypton.AttachmentStorage, 'Local')
                 }, (error, data) => {
                   if (error) {
                     reject(error);
+                    return;
                   }
 
                   const response = {};
